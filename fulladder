@@ -1,0 +1,90 @@
+* SPICE3 file created from fulladder.ext - technology: scmos
+
+.model pfet pmos
+.model nfet nmos
+
+.tran 0.05n 40n
+
+
+M1000 Carry nand1_2/A VDD nand1_2/w_n21_9# pfet w=6u l=2u
++ ad=90p pd=42u as=504p ps=288u
+M1001 VDD nand1_2/B Carry nand1_2/w_n21_9# pfet w=6u l=2u
++ ad=0p pd=0u as=0p ps=0u
+M1002 nand1_2/a_n6_n27# nand1_2/A nand1_2/gnd Gnd nfet w=6u l=2u
++ ad=90p pd=42u as=60p ps=32u
+M1003 Carry nand1_2/B nand1_2/a_n6_n27# Gnd nfet w=6u l=2u
++ ad=60p pd=32u as=0p ps=0u
+M1004 nand1_2/B A VDD nand1_1/w_n21_9# pfet w=6u l=2u
++ ad=90p pd=42u as=0p ps=0u
+M1005 VDD B nand1_2/B nand1_1/w_n21_9# pfet w=6u l=2u
++ ad=0p pd=0u as=0p ps=0u
+M1006 nand1_1/a_n6_n27# A nand1_1/gnd Gnd nfet w=6u l=2u
++ ad=90p pd=42u as=60p ps=32u
+M1007 nand1_2/B B nand1_1/a_n6_n27# Gnd nfet w=6u l=2u
++ ad=60p pd=32u as=0p ps=0u
+M1008 nand1_2/A Sum VDD nand1_0/w_n21_9# pfet w=6u l=2u
++ ad=90p pd=42u as=0p ps=0u
+M1009 VDD xor1_1/A nand1_2/A nand1_0/w_n21_9# pfet w=6u l=2u
++ ad=0p pd=0u as=0p ps=0u
+M1010 nand1_0/a_n6_n27# Sum nand1_0/gnd Gnd nfet w=6u l=2u
++ ad=90p pd=42u as=60p ps=32u
+M1011 nand1_2/A xor1_1/A nand1_0/a_n6_n27# Gnd nfet w=6u l=2u
++ ad=60p pd=32u as=0p ps=0u
+M1012 VDD xor1_1/A xor1_1/a_n18_n26# xor1_1/w_n20_n2# pfet w=6u l=2u
++ ad=0p pd=0u as=71p ps=48u
+M1013 VDD Sum xor1_1/a_9_n26# xor1_1/w_7_n2# pfet w=6u l=2u
++ ad=0p pd=0u as=36p ps=24u
+M1014 xor1_1/Vo Sum xor1_1/A xor1_1/w_46_11# pfet w=6u l=2u
++ ad=92p pd=56u as=134p ps=82u
+M1015 xor1_1/Vo xor1_1/a_9_n26# xor1_1/A Gnd nfet w=6u l=2u
++ ad=84p pd=52u as=126p ps=78u
+M1016 xor1_1/a_n18_n26# xor1_1/A xor1_1/gnd Gnd nfet w=6u l=2u
++ ad=84p pd=52u as=66p ps=46u
+M1017 xor1_1/a_9_n26# Sum xor1_1/gnd Gnd nfet w=6u l=2u
++ ad=42p pd=26u as=0p ps=0u
+M1018 xor1_1/Vo xor1_1/a_9_n26# xor1_1/a_n18_n26# xor1_1/w_46_n34# pfet w=5u l=2u
++ ad=0p pd=0u as=0p ps=0u
+M1019 xor1_1/Vo Sum xor1_1/a_n18_n26# Gnd nfet w=6u l=2u
++ ad=0p pd=0u as=0p ps=0u
+M1020 VDD A xor1_0/a_n18_n26# xor1_0/w_n20_n2# pfet w=6u l=2u
++ ad=0p pd=0u as=71p ps=48u
+M1021 VDD B xor1_0/a_9_n26# xor1_0/w_7_n2# pfet w=6u l=2u
++ ad=0p pd=0u as=36p ps=24u
+M1022 xor1_1/A B A xor1_0/w_46_11# pfet w=6u l=2u
++ ad=0p pd=0u as=42p ps=26u
+M1023 xor1_1/A xor1_0/a_9_n26# A Gnd nfet w=6u l=2u
++ ad=0p pd=0u as=42p ps=26u
+M1024 xor1_0/a_n18_n26# A xor1_0/gnd Gnd nfet w=6u l=2u
++ ad=84p pd=52u as=66p ps=46u
+M1025 xor1_0/a_9_n26# B xor1_0/gnd Gnd nfet w=6u l=2u
++ ad=42p pd=26u as=0p ps=0u
+M1026 xor1_1/A xor1_0/a_9_n26# xor1_0/a_n18_n26# xor1_0/w_46_n34# pfet w=5u l=2u
++ ad=0p pd=0u as=0p ps=0u
+M1027 xor1_1/A B xor1_0/a_n18_n26# Gnd nfet w=6u l=2u
++ ad=0p pd=0u as=0p ps=0u
+C0 xor1_0/gnd gnd! 6.4fF
+C1 xor1_0/a_9_n26# gnd! 20.3fF
+C2 xor1_0/a_n18_n26# gnd! 40.8fF
+C3 A gnd! 218.9fF
+C4 B gnd! 206.9fF
+C5 xor1_1/gnd gnd! 6.4fF
+C6 xor1_1/a_9_n26# gnd! 20.3fF
+C7 xor1_1/a_n18_n26# gnd! 40.8fF
+C8 xor1_1/Vo gnd! 15.5fF
+C9 xor1_1/A gnd! 160.3fF
+C10 Sum gnd! 208.9fF
+C11 nand1_0/gnd gnd! 7.7fF
+C12 nand1_2/A gnd! 89.5fF
+C13 nand1_1/gnd gnd! 7.7fF
+C14 nand1_2/gnd gnd! 7.7fF
+C15 Carry gnd! 20.1fF
+C16 nand1_2/B gnd! 124.0fF
+C17 VDD gnd! 38.9fF
+
+VDD VDD 0 5
+vgnd gnd! 0 0
+VA A 0 0 pulse 0 5 1n 2n 2n 5n 20n
+VB B 0 0 pulse 0 5  2n 2n 2n 5n 20n
+Vcin cin 0 0 pulse 0 5 3n 2n 2n 5n 20n
+.probe V(A) V(B) V(Cin) V(Sum) V(Carry)
+.end
